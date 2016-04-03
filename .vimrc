@@ -87,10 +87,9 @@ set nofoldenable
 "set clipboard=unnamed
 "set synmaxcol=128
 "set ttyscroll=10
-"set encoding=utf-8
-set colorcolumn=80
-set tw=79
-highlight ColorColumn ctermbg=225
+set encoding=utf-8
+set colorcolumn=120
+" highlight ColorColumn ctermbg=5
 set nowrap
 set number
 set hlsearch
@@ -105,7 +104,8 @@ set noswapfile
 set autoindent
 set expandtab
 set noexpandtab
-set softtabstop=2
-set shiftwidth=2
+set softtabstop=4
+set shiftwidth=4
 set smarttab
 
+let g:airline_powerline_fonts = 1
