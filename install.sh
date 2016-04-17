@@ -13,6 +13,10 @@ git config --global core.editor "vim"
 echo "Install vim"
 sudo apt-get install -y vim
 
+echo "Install fonts for vim-airline"
+git clone https://github.com/powerline/fonts.git
+./fonts/install.sh
+
 echo "Install vandle for vim"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
