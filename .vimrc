@@ -17,6 +17,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'gregsexton/MatchTag'
 Plugin 'vim-airline/vim-airline'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
