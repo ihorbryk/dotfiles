@@ -12,7 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'mattn/emmet-vim'
-Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-commentary'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'gregsexton/MatchTag'
@@ -103,9 +103,15 @@ set noswapfile
 
 set autoindent
 set expandtab
-set noexpandtab
 set softtabstop=4
 set shiftwidth=4
 set smarttab
 
 let g:airline_powerline_fonts = 1
+
+set wrap
+
+nmap j gj
+nmap < DOWN> gj
+nmap k gk
+nmap < UP> gk
