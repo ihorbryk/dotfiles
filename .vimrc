@@ -11,13 +11,21 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-airline'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'gregsexton/MatchTag'
-Plugin 'vim-airline/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'jwalton512/vim-blade'
+Plugin 'ervandew/supertab'
+Plugin '2072/PHP-Indenting-for-VIm'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'elzr/vim-json'
+Plugin 'pangloss/vim-javascript'
+Plugin 'jiangmiao/auto-pairs'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -89,7 +97,7 @@ set nofoldenable
 "set synmaxcol=128
 "set ttyscroll=10
 set encoding=utf-8
-set colorcolumn=120
+"set colorcolumn=120
 " highlight ColorColumn ctermbg=5
 set nowrap
 set number
@@ -104,8 +112,8 @@ set noswapfile
 
 set autoindent
 set expandtab
-set softtabstop=4
-set shiftwidth=4
+set softtabstop=2
+set shiftwidth=2
 set smarttab
 
 let g:airline_powerline_fonts = 1
@@ -116,3 +124,18 @@ nmap j gj
 nmap < DOWN> gj
 nmap k gk
 nmap < UP> gk
+
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers = ['eslint']
+
+let g:syntastic_php_checkers=['phpcs', 'php']
+let g:syntastic_php_phpcs_exec='~/.composer/vendor/bin/phpcs'
+let g:syntastic_php_phpcs_args='--standard=PSR2 -n'
+
+autocmd Filetype php setlocal ts=4 sw=4 autoindent
+autocmd Filetype php setlocal ts=4 sw=4 autoindent
