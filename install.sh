@@ -1,4 +1,4 @@
-setxkbmap -layout us -option ctrl:nocaps
+setxkbmap -option caps:ctrl_modifier
 
 git config --global user.name "ihorbryk"
 git config --global user.email "ihorbryk@gmail.com"
