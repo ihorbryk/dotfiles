@@ -26,6 +26,7 @@ Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'elzr/vim-json'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'jdkanani/vim-material-theme'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -63,7 +64,10 @@ set number
 map <C-n> :NERDTreeToggle<CR>
 
 set t_Co=256
-colorscheme jellybeans
+syntax enable
+set background=dark
+colorscheme material-theme
+" colorscheme jellybeans
 
 " Map ctrl-movement keys to window switching
 map <C-k> <C-w><Up>
@@ -90,6 +94,7 @@ endif
 set lazyredraw
 
 set cursorline
+hi CursorLine cterm=NONE ctermbg=darkgrey  guibg=darkgrey
 set hidden
 set nofoldenable
 "set modelines=0
@@ -112,8 +117,8 @@ set noswapfile
 
 set autoindent
 set expandtab
-set softtabstop=2
-set shiftwidth=2
+set softtabstop=4
+set shiftwidth=4
 set smarttab
 
 let g:airline_powerline_fonts = 1
