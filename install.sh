@@ -15,7 +15,4 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cp .vimrc ~/
 cp .bashrc ~/
 
-sudo apt-get install -y virtualbox
-sudo apt-get install -y vagrant
-
 echo "Done!"
