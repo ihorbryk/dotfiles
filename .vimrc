@@ -27,6 +27,7 @@ Plugin 'elzr/vim-json'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'jdkanani/vim-material-theme'
+Plugin 'tpope/vim-surround'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -66,8 +67,8 @@ map <C-n> :NERDTreeToggle<CR>
 set t_Co=256
 syntax enable
 set background=dark
-colorscheme material-theme
-" colorscheme jellybeans
+" colorscheme material-theme
+colorscheme jellybeans
 
 " Map ctrl-movement keys to window switching
 map <C-k> <C-w><Up>
@@ -94,7 +95,7 @@ endif
 set lazyredraw
 
 set cursorline
-hi CursorLine cterm=NONE ctermbg=darkgrey  guibg=darkgrey
+" hi CursorLine cterm=NONE ctermbg=darkgrey  guibg=darkgrey
 set hidden
 set nofoldenable
 "set modelines=0
@@ -144,3 +145,5 @@ let g:syntastic_php_phpcs_args='--standard=PSR2 -n'
 
 autocmd Filetype php setlocal ts=4 sw=4 autoindent
 autocmd Filetype php setlocal ts=4 sw=4 autoindent
+
+autocmd FileType apache setlocal commentstring=#\ %s
