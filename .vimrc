@@ -28,6 +28,8 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'jdkanani/vim-material-theme'
 Plugin 'tpope/vim-surround'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'eshion/vim-sync'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -49,7 +51,7 @@ Plugin 'tpope/vim-surround'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
+filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -85,7 +87,7 @@ set backspace=eol,start,indent
 " enhanced command completion
 set wildmenu
 
-set visualbell
+" set visualbell
 
 if has('mouse')
 set mouse=a
@@ -147,3 +149,4 @@ autocmd Filetype php setlocal ts=4 sw=4 autoindent
 autocmd Filetype php setlocal ts=4 sw=4 autoindent
 
 autocmd FileType apache setlocal commentstring=#\ %s
+filetype indent on
