@@ -17,6 +17,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'jnurmine/Zenburn'
 Plugin 'gregsexton/MatchTag'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'jwalton512/vim-blade'
@@ -30,6 +31,9 @@ Plugin 'jdkanani/vim-material-theme'
 Plugin 'tpope/vim-surround'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'eshion/vim-sync'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'othree/html5.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -150,3 +154,13 @@ autocmd Filetype php setlocal ts=4 sw=4 autoindent
 
 autocmd FileType apache setlocal commentstring=#\ %s
 filetype indent on
+
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 12
+  elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h14
+  elseif has("gui_win32")
+    set guifont=Consolas:h11:cANSI
+  endif
+endif
