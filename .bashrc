@@ -114,3 +114,5 @@ if ! shopt -oq posix; then
 fi
 
 set -o vi
+
+alias wpinstall="curl -L -o 'wp.sh' https://gist.githubusercontent.com/bgallagh3r/2853221/raw/f3e2f2fa3048bbeb6d35799af068965bc5fd9b26/wp.sh && bash wp.sh"

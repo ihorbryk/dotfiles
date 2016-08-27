@@ -17,19 +17,32 @@ Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'nanotech/jellybeans.vim'
-Plugin 'gregsexton/MatchTag'
+" Plugin 'gregsexton/MatchTag'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'jwalton512/vim-blade'
-Plugin 'ervandew/supertab'
-Plugin '2072/PHP-Indenting-for-VIm'
-Plugin 'shawncplus/phpcomplete.vim'
+" Plugin 'ervandew/supertab'
+" Plugin '2072/PHP-Indenting-for-VIm'
+" Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'elzr/vim-json'
 Plugin 'pangloss/vim-javascript'
-Plugin 'jiangmiao/auto-pairs'
+" Plugin 'jiangmiao/auto-pairs'
 Plugin 'jdkanani/vim-material-theme'
 Plugin 'tpope/vim-surround'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'eshion/vim-sync'
+Plugin 'othree/html5.vim'
+Plugin 'rking/ag.vim'
+Plugin 'skwp/greplace.vim'
+Plugin 'vim-scripts/vim-php-namespace'
+Plugin 'craigemery/vim-autotag'
+Plugin 'stephpy/vim-php-cs-fixer'
+
+" PHP Docs and requireds
+Plugin 'tobyS/vmustache'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'tobyS/pdv'
+
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -62,10 +75,15 @@ filetype plugin on
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 "
+
+
+" Enable display line numbers
 set number
 
+" Map NerdTree on ctrl-n
 map <C-n> :NERDTreeToggle<CR>
 
+" Syntax hilight
 set t_Co=256
 syntax enable
 set background=dark
@@ -78,17 +96,14 @@ map <C-j> <C-w><Down>
 map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
 
+" Change default lider key
 let mapleader=","
 
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 
-" enhanced command completion
-set wildmenu
-
-" set visualbell
-
+" Use mouse like a boss
 if has('mouse')
 set mouse=a
 endif
@@ -97,42 +112,26 @@ endif
 set lazyredraw
 
 set cursorline
-" hi CursorLine cterm=NONE ctermbg=darkgrey  guibg=darkgrey
-set hidden
-set nofoldenable
-"set modelines=0
-"set clipboard=unnamed
-"set synmaxcol=128
-"set ttyscroll=10
 set encoding=utf-8
-"set colorcolumn=120
-" highlight ColorColumn ctermbg=5
-set nowrap
-set number
 set hlsearch
-set ignorecase
-set smartcase
 
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
 set nowb
 set noswapfile
 
-set autoindent
-set expandtab
-set softtabstop=4
-set shiftwidth=4
-set smarttab
-
+" airline settings
 let g:airline_powerline_fonts = 1
 
 set wrap
 
+" Better cursor muve on long lines
 nmap j gj
 nmap < DOWN> gj
 nmap k gk
 nmap < UP> gk
 
+" Syntastic preference
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
@@ -150,3 +149,32 @@ autocmd Filetype php setlocal ts=4 sw=4 autoindent
 
 autocmd FileType apache setlocal commentstring=#\ %s
 filetype indent on
+
+" Display hiden files in nerdtree
+let NERDTreeShowHidden=1
+
+nmap <Leader>f :tag<space>
+
+" set foldcolumn=1
+" hi foldcolumn ctermbg=bg
+
+let g:ag_working_path_mode="r"
+
+set grepprg=ag
+let g:grep_cmd_opts = '--line-numbers --noheading'
+
+inoremap <Leader>n <C-O>:call PhpInsertUse()<CR>
+noremap <Leader>n :call PhpInsertUse()<CR>
+
+nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
+nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
+
+" pdv
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
+
+" Ultisnips
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
