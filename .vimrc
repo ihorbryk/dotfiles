@@ -25,8 +25,9 @@ Plugin 'jwalton512/vim-blade'
 " Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'elzr/vim-json'
 Plugin 'pangloss/vim-javascript'
-" Plugin 'jiangmiao/auto-pairs'
-Plugin 'jdkanani/vim-material-theme'
+Plugin 'jiangmiao/auto-pairs'
+" Plugin 'jdkanani/vim-material-theme'
+Plugin 'gosukiwi/vim-atom-dark'
 Plugin 'tpope/vim-surround'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'eshion/vim-sync'
@@ -89,6 +90,7 @@ syntax enable
 set background=dark
 " colorscheme material-theme
 colorscheme jellybeans
+" colorscheme atom-dark-256
 
 " Map ctrl-movement keys to window switching
 map <C-k> <C-w><Up>
@@ -147,6 +149,11 @@ let g:syntastic_php_phpcs_args='--standard=PSR2 -n'
 autocmd Filetype php setlocal ts=4 sw=4 autoindent
 autocmd Filetype php setlocal ts=4 sw=4 autoindent
 
+autocmd Filetype html setlocal ts=2 sw=2 autoindent
+autocmd Filetype css setlocal ts=2 sw=2 autoindent
+autocmd Filetype scss setlocal ts=2 sw=2 autoindent
+autocmd Filetype js setlocal ts=2 sw=2 autoindent
+
 autocmd FileType apache setlocal commentstring=#\ %s
 filetype indent on
 
@@ -178,3 +185,8 @@ let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" ctrlp
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=mode_modules
+
