@@ -44,6 +44,9 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'tobyS/pdv'
 
+" Git
+Plugin 'tpope/vim-fugitive'
+
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -146,15 +149,18 @@ let g:syntastic_php_checkers=['phpcs', 'php']
 let g:syntastic_php_phpcs_exec='~/.composer/vendor/bin/phpcs'
 let g:syntastic_php_phpcs_args='--standard=PSR2 -n'
 
-autocmd Filetype php setlocal ts=4 sw=4 autoindent
-autocmd Filetype php setlocal ts=4 sw=4 autoindent
+autocmd Filetype php setlocal ts=4 sts=4 sw=4 
+autocmd Filetype html setlocal ts=2 sts=2 sw=2
 
-autocmd Filetype html setlocal ts=2 sw=2 autoindent
-autocmd Filetype css setlocal ts=2 sw=2 autoindent
-autocmd Filetype scss setlocal ts=2 sw=2 autoindent
-autocmd Filetype js setlocal ts=2 sw=2 autoindent
+autocmd Filetype css setlocal ts=2 sts=2 sw=2
+autocmd Filetype sass setlocal ts=2 sts=2 sw=2
+autocmd Filetype scss setlocal ts=2 sts=2 sw=2
+
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype js setlocal ts=2 sts=2 sw=2
 
 autocmd FileType apache setlocal commentstring=#\ %s
+autocmd FileType html setlocal commentstring=<!--\ %s -->
 filetype indent on
 
 " Display hiden files in nerdtree
@@ -162,6 +168,8 @@ let NERDTreeShowHidden=1
 
 nmap <Leader>f :tag<space>
 
+set foldenable
+set foldmethod=indent
 " set foldcolumn=1
 " hi foldcolumn ctermbg=bg
 
