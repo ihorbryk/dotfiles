@@ -115,4 +115,6 @@ fi
 
 set -o vi
 
-alias wpinstall="curl -L -o 'wp.sh' https://gist.githubusercontent.com/bgallagh3r/2853221/raw/f3e2f2fa3048bbeb6d35799af068965bc5fd9b26/wp.sh && bash wp.sh"
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/base16-material.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
