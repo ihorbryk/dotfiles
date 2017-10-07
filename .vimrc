@@ -12,6 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-airline'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-commentary'
@@ -46,6 +47,26 @@ Plugin 'tobyS/pdv'
 
 " Git
 Plugin 'tpope/vim-fugitive'
+
+" Vuejs
+Plugin 'posva/vim-vue'
+
+" Type Script
+Plugin 'leafgarland/typescript-vim'
+
+" Icons
+Plugin 'ryanoasis/vim-devicons'
+
+" Material theme
+Plugin 'kristijanhusak/vim-hybrid-material'
+" Quantum theme
+Plugin 'tyrannicaltoucan/vim-quantum'
+
+" Display indentation
+Plugin 'Yggdroot/indentLine'
+
+" Debuging
+Plugin 'joonty/vdebug'
 
 
 " The following are examples of different formats supported.
@@ -91,9 +112,23 @@ map <C-n> :NERDTreeToggle<CR>
 set t_Co=256
 syntax enable
 set background=dark
+" set background=light
 " colorscheme material-theme
-colorscheme jellybeans
+" colorscheme jellybeans
 " colorscheme atom-dark-256
+"
+" Hybrid material theme
+" colorscheme hybrid_material
+" let g:enable_bold_font = 1
+" let g:enable_italic_font = 1
+" End hybrid material theme
+
+" Quantum
+set termguicolors
+colorscheme quantum
+let g:quantum_black=1
+let g:quantum_italics=1
+" End Quantum
 
 " Map ctrl-movement keys to window switching
 map <C-k> <C-w><Up>
@@ -125,6 +160,11 @@ set nobackup
 set nowb
 set noswapfile
 
+set autoindent
+set expandtab
+set softtabstop=2
+set shiftwidth=2"
+
 " airline settings
 let g:airline_powerline_fonts = 1
 
@@ -149,6 +189,8 @@ let g:syntastic_php_checkers=['phpcs', 'php']
 let g:syntastic_php_phpcs_exec='~/.composer/vendor/bin/phpcs'
 let g:syntastic_php_phpcs_args='--standard=PSR2 -n'
 
+filetype indent on
+
 autocmd Filetype php setlocal ts=4 sts=4 sw=4 
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 
@@ -161,15 +203,15 @@ autocmd Filetype js setlocal ts=2 sts=2 sw=2
 
 autocmd FileType apache setlocal commentstring=#\ %s
 autocmd FileType html setlocal commentstring=<!--\ %s -->
-filetype indent on
 
 " Display hiden files in nerdtree
 let NERDTreeShowHidden=1
 
+" Easy motion
 nmap <Leader>f :tag<space>
 
-set foldenable
-set foldmethod=indent
+" set foldenable
+" set foldmethod=indent
 " set foldcolumn=1
 " hi foldcolumn ctermbg=bg
 
@@ -196,5 +238,22 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " ctrlp
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-set wildignore+=mode_modules
+set wildignore+=node_modules
 
+" Type Script
+let g:typescript_indent_disable = 1
+autocmd FileType ts setlocal indentkeys+=0.
+
+" Editor config
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = 'npm run lint --'
