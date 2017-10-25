@@ -14,6 +14,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
@@ -124,10 +125,11 @@ set background=dark
 " End hybrid material theme
 
 " Quantum
-set termguicolors
+" set termguicolors
 colorscheme quantum
 let g:quantum_black=1
 let g:quantum_italics=1
+let g:airline_theme='simple'
 " End Quantum
 
 " Map ctrl-movement keys to window switching
