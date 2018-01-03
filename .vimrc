@@ -69,6 +69,11 @@ Plugin 'Yggdroot/indentLine'
 " Debuging
 Plugin 'joonty/vdebug'
 
+Plugin 'tpope/vim-sensible'
+Plugin 'jlanzarotta/bufexplorer'
+" Plugin 'w0rp/ale'
+
+Plugin 'dyng/ctrlsf.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
